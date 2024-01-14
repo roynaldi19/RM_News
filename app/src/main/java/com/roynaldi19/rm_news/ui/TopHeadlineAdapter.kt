@@ -11,35 +11,35 @@ import com.roynaldi19.rm_news.R
 import com.roynaldi19.rm_news.data.response.ArticlesItem
 import com.roynaldi19.rm_news.databinding.ItemTopheadlineBinding
 
-class TopHeadlineAdapter: ListAdapter<ArticlesItem, TopHeadlineAdapter.MyViewHolder>(DIFF_CALLBACK) {
-    class MyViewHolder(val binding: ItemTopheadlineBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(article: ArticlesItem){
+class TopHeadlineAdapter :
+    ListAdapter<ArticlesItem, TopHeadlineAdapter.MyViewHolder>(DIFF_CALLBACK) {
+    class MyViewHolder(val binding: ItemTopheadlineBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(article: ArticlesItem) {
             binding.tvJudulBerita.text = article.title
             binding.tvSumber.text = article.author
             binding.tvTanggal.text = article.publishedAt
 
             if (article.urlToImage != null) {
                 Glide.with(binding.root.context)
-                    .load(article.urlToImage).into(binding.ivTopHeadline)
-//                    .placeholder(R.drawable.placeholder_image)
-//                    .error(R.drawable.error)
-
+                    .load(article.urlToImage).placeholder(R.drawable.error)
+                    .error(R.drawable.error).into(binding.ivTopHeadline)
             } else {
-                binding.ivTopHeadline.setImageDrawable(R.drawable.placeholder_image)
-
+                binding.ivTopHeadline.setImageResource(R.drawable.error)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = ItemTopheadlineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemTopheadlineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val article = getItem(position)
-        holder.bind(article
+        holder.bind(
+            article
         )
     }
 
