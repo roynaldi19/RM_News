@@ -6,13 +6,28 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.roynaldi19.rm_news.R
 import com.roynaldi19.rm_news.data.response.ArticlesItem
 import com.roynaldi19.rm_news.databinding.ItemTopheadlineBinding
 
 class TopHeadlineAdapter: ListAdapter<ArticlesItem, TopHeadlineAdapter.MyViewHolder>(DIFF_CALLBACK) {
     class MyViewHolder(val binding: ItemTopheadlineBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticlesItem){
-            binding.
+            binding.tvJudulBerita.text = article.title
+            binding.tvSumber.text = article.author
+            binding.tvTanggal.text = article.publishedAt
+
+            if (article.urlToImage != null) {
+                Glide.with(binding.root.context)
+                    .load(article.urlToImage).into(binding.ivTopHeadline)
+//                    .placeholder(R.drawable.placeholder_image)
+//                    .error(R.drawable.error)
+
+            } else {
+                binding.ivTopHeadline.setImageDrawable(R.drawable.placeholder_image)
+
+            }
         }
 
     }
