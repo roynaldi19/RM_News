@@ -7,6 +7,7 @@ import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.roynaldi19.rm_news.R
 import com.roynaldi19.rm_news.data.retrofit.ApiConfig
 import com.roynaldi19.rm_news.data.retrofit.ApiService
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
         binding.rvTopHeadline.addItemDecoration(itemDecoration)
         binding.rvTopHeadline.adapter = topHeadlineAdapter
+
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.rvTopHeadline)
 
         val country = "id"
         val apiKey = "e290ba5e72814fc78a033491a6ab2363"
