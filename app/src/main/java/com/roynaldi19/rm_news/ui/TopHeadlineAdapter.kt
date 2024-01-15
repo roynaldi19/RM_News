@@ -1,6 +1,7 @@
 package com.roynaldi19.rm_news.ui
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -22,10 +23,10 @@ class TopHeadlineAdapter :
 
             if (article.urlToImage != null) {
                 Glide.with(binding.root.context)
-                    .load(article.urlToImage).placeholder(R.drawable.error)
+                    .load(article.urlToImage).placeholder(R.drawable.headline)
                     .error(R.drawable.error).into(binding.ivTopHeadline)
             } else {
-                binding.ivTopHeadline.setImageResource(R.drawable.error)
+                binding.ivTopHeadline.setImageResource(R.drawable.headline)
             }
         }
     }

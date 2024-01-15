@@ -7,24 +7,24 @@
 
     <ImageView
         android:id="@+id/iv_topHeadline"
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_width="223dp"
+        android:layout_height="196dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
+
     <TextView
         android:id="@+id/tv_judulBerita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="128dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="140dp"
         android:text="@string/judul_berita"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_topHeadline" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_sumber"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_sumber"
