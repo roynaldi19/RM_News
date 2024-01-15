@@ -1,7 +1,6 @@
 package com.roynaldi19.rm_news.ui
 
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil

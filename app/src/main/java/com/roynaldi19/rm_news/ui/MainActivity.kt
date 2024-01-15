@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         topHeadlineAdapter = TopHeadlineAdapter()
-        val layoutManager = LinearLayoutManager(this)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
         binding.rvTopHeadline.layoutManager = layoutManager
         val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
         binding.rvTopHeadline.addItemDecoration(itemDecoration)
