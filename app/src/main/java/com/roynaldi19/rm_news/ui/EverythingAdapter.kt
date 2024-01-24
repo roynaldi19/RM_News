@@ -1,6 +1,5 @@
 package com.roynaldi19.rm_news.ui
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.roynaldi19.rm_news.R
 import com.roynaldi19.rm_news.data.response.ArticlesItem
-import com.roynaldi19.rm_news.databinding.ItemEverythingBinding
+import com.roynaldi19.rm_news.databinding.ItemTopheadlineBinding
 
-class TopHeadlineAdapter :
-    ListAdapter<ArticlesItem, TopHeadlineAdapter.MyViewHolder>(DIFF_CALLBACK) {
-    class MyViewHolder(val binding: ItemEverythingBinding) :
+class EverythingAdapter :
+    ListAdapter<ArticlesItem, EverythingAdapter.MyViewHolder>(DIFF_CALLBACK) {
+    class MyViewHolder(val binding: ItemTopheadlineBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticlesItem) {
             binding.tvJudulBerita.text = article.title
@@ -32,7 +31,7 @@ class TopHeadlineAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding =
-            ItemEverythingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemTopheadlineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
