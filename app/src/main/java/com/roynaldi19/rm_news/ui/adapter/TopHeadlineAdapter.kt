@@ -1,5 +1,6 @@
 package com.roynaldi19.rm_news.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.roynaldi19.rm_news.R
 import com.roynaldi19.rm_news.data.response.ArticlesItem
 import com.roynaldi19.rm_news.databinding.ItemTopheadlineBinding
+import com.roynaldi19.rm_news.ui.view.WebActivity
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -67,6 +69,11 @@ class TopHeadlineAdapter :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val article = getItem(position)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, WebActivity::class.java)
+            intent.putExtra(WebActivity.EXTRA_URL, article.url)
+            holder.itemView.context.startActivity(intent)
+        }
         holder.bind(
             article
         )
