@@ -18,8 +18,11 @@ class TopHeadlineAdapter :
     class MyViewHolder(val binding: ItemTopheadlineBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticlesItem) {
-            binding.tvJudulBerita.text = article.title
+            val formattedTitle = deleteTitleAfterDash(article.title)
+            binding.tvJudulBerita.text = formattedTitle
+
             binding.tvSumber.text = article.author
+
             val formattedDate = convertDateFormat(article.publishedAt)
             binding.tvTanggal.text = formattedDate
 
@@ -36,13 +39,23 @@ class TopHeadlineAdapter :
             try {
                 val originalFormat =
                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
-                val targetFormat = SimpleDateFormat("HH:mm  dd-MM-yyyy", Locale.getDefault())
+                val targetFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
                 val date: Date = originalFormat.parse(publishedAt) ?: return publishedAt
                 return targetFormat.format(date)
             } catch (e: Exception) {
                 e.printStackTrace()
                 return publishedAt
             }
+        }
+
+        private fun deleteTitleAfterDash(title: String): String {
+            val index = title.indexOf('-')
+            return if (index != -1){
+                title.substring(0, index).trim()
+            } else{
+                title
+            }
+
         }
     }
 
