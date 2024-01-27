@@ -10,7 +10,6 @@ import com.roynaldi19.rm_news.data.retrofit.ApiConfig
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-
     private val _topHeadlineArticles = MutableLiveData<List<ArticlesItem>>()
     val topHeadlineArticles: LiveData<List<ArticlesItem>> get() = _topHeadlineArticles
 
@@ -40,7 +39,6 @@ class MainViewModel : ViewModel() {
             } catch (e: Exception) {
                 Log.e("MainActivity", "Exception: ${e.message}")
                 _loadingTopHeadline.value = false
-
             }
         }
     }
