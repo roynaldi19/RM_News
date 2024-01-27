@@ -1,4 +1,4 @@
-package com.roynaldi19.rm_news.ui
+package com.roynaldi19.rm_news.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
