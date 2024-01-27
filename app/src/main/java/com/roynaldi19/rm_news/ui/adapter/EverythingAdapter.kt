@@ -26,9 +26,9 @@ class EverythingAdapter :
             if (article.urlToImage != null) {
                 Glide.with(binding.root.context)
                     .load(article.urlToImage).placeholder(R.drawable.headline)
-                    .error(R.drawable.error).into(binding.ivTopHeadline)
+                    .error(R.drawable.error).into(binding.ivEverything)
             } else {
-                binding.ivTopHeadline.setImageResource(R.drawable.headline)
+                binding.ivEverything.setImageResource(R.drawable.headline)
             }
         }
 

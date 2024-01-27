@@ -71,6 +71,5 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.getTopHeadline(country, apiKey)
         viewModel.getEverything(query, apiKey)
-
     }
 }
