@@ -29,9 +29,9 @@ class EverythingAdapter :
             if (article.urlToImage != null) {
                 Glide.with(binding.root.context)
                     .load(article.urlToImage).placeholder(R.drawable.headline)
-                    .error(R.drawable.error).into(binding.ivEverything)
+                    .error(R.drawable.error).into(binding.ivFotoBerita)
             } else {
-                binding.ivEverything.setImageResource(R.drawable.headline)
+                binding.ivFotoBerita.setImageResource(R.drawable.headline)
             }
         }
 
@@ -55,7 +55,6 @@ class EverythingAdapter :
             } else{
                 title
             }
-
         }
     }
 

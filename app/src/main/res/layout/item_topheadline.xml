@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cv_topHeadLine"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -19,11 +18,11 @@
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/iv_topHeadline"
+            android:id="@+id/iv_fotoBerita"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
@@ -34,34 +33,36 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             android:text="@string/judul_berita"
-            android:textSize="16sp"
+            android:textSize="13sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_topHeadline"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text = "Indonesia Lolos Ke 16 besar Piala Asia. "/>
+            app:layout_constraintStart_toEndOf="@+id/iv_fotoBerita"
+            app:layout_constraintTop_toTopOf="@+id/iv_fotoBerita"
+            tools:text="Indonesia Lolos Ke 16 besar Piala Asia. " />
 
         <TextView
             android:id="@+id/tv_sumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_topHeadline"
+            app:layout_constraintTop_toBottomOf="@+id/iv_fotoBerita"
             tools:text="@string/sumber" />
 
         <TextView
             android:id="@+id/tv_tanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_topHeadline"
+            app:layout_constraintTop_toBottomOf="@+id/iv_fotoBerita"
             tools:text="@string/tanggal" />
 
 
