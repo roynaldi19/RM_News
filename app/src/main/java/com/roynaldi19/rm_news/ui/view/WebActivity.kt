@@ -41,8 +41,5 @@ class WebActivity : AppCompatActivity() {
         if (url != null){
             binding.webView.loadUrl(url)
         }
-
-
     }
-
 }

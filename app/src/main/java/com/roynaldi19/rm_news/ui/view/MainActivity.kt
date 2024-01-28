@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         everythingAdapter = EverythingAdapter()
-        val everythingLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val everythingLayoutManager = LinearLayoutManager(this)
 
         binding.rvTopHeadline.layoutManager = topHeadLineLayoutManager
         val topHeadLineItemDecoration =
