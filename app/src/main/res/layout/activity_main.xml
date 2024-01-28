@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".ui.view.MainActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -61,16 +61,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_topHeadline" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_everything"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
     <ProgressBar
         android:id="@+id/pb_topHeadline"
@@ -84,16 +74,44 @@
         app:layout_constraintTop_toTopOf="@+id/rv_topHeadline"
         tools:visibility="visible" />
 
-    <ProgressBar
-        android:id="@+id/pb_everything"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rv_everything"
-        app:layout_constraintEnd_toEndOf="@+id/rv_everything"
-        app:layout_constraintStart_toStartOf="@+id/rv_everything"
-        app:layout_constraintTop_toTopOf="@+id/rv_everything"
-        tools:visibility="visible" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="373dp"
+        android:id="@+id/sv"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_everything"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/pb_everything"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/sv"
+            app:layout_constraintEnd_toEndOf="@+id/sv"
+            app:layout_constraintStart_toStartOf="@+id/sv"
+            app:layout_constraintTop_toTopOf="@+id/sv"
+            tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
